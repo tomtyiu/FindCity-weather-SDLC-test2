@@ -1,0 +1,18 @@
+{
+  "name": "findcity-weather",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Real-time weather lookup by city, served by an Express proxy over Open-Meteo.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/validate.test.js tests/weatherCodes.test.js tests/server.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1"
+  }
+}
