@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FindCity Weather</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>FindCity Weather</h1>
+        <p class="tagline">Real-time conditions for your city.</p>
+      </header>
+
+      <form id="search-form" class="search">
+        <label for="city-input" class="visually-hidden">City</label>
+        <input
+          id="city-input"
+          name="city"
+          type="text"
+          placeholder="Enter a city, e.g. London"
+          autocomplete="off"
+          maxlength="100"
+          required
+        />
+        <button type="submit" id="search-btn">Get weather</button>
+        <button type="button" id="geo-btn" title="Use my location">Use my location</button>
+      </form>
+
+      <section id="status" class="status" role="status" aria-live="polite"></section>
+
+      <section id="weather-card" class="card" hidden>
+        <div class="card-head">
+          <h2 id="loc-name"></h2>
+          <span id="loc-sub" class="muted"></span>
+        </div>
+        <div class="card-body">
+          <div class="temp">
+            <span id="temp" class="temp-value"></span>
+            <span class="temp-unit">&deg;C</span>
+          </div>
+          <div class="condition">
+            <span id="condition" class="condition-text"></span>
+            <span id="day-night" class="muted"></span>
+          </div>
+        </div>
+        <dl class="metrics">
+          <div><dt>Feels like</dt><dd><span id="feels"></span> &deg;C</dd></div>
+          <div><dt>Humidity</dt><dd><span id="humidity"></span>%</dd></div>
+          <div><dt>Wind</dt><dd><span id="wind"></span> km/h</dd></div>
+          <div><dt>Wind dir</dt><dd><span id="wind-dir"></span>&deg;</dd></div>
+        </dl>
+        <footer class="card-foot">
+          <span class="muted">Source: <a href="https://open-meteo.com" target="_blank" rel="noopener">open-meteo.com</a></span>
+          <span class="muted">Updated <span id="updated"></span></span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
